@@ -1,0 +1,4 @@
+sample_results/*
+__pycache__/
+pretrained_models/*
+saved_results/*
