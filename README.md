@@ -1,5 +1,3 @@
-Perfect 👍 Here’s a clean **English version** of the research project README template.
-You can copy it directly into your `README.md` in VSCode and just fill in your own details.
 
 ---
 
