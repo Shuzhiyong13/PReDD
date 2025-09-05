@@ -9,7 +9,7 @@ GPU=0
 EXPS=( "fruits_10ipc")
 DATASETS=("imagenet-fruits")
 DISTILL_PATHS=(
-    "/root/PreDD/saved_results/dm/imagenet-fruits/10_ipc/res_128_DM_imagenet-fruits_ConvNet_10ipc.pt"
+    "/root/PReDD/saved_results/dm/imagenet-fruits/10_ipc/res_128_DM_imagenet-fruits_ConvNet_10ipc.pt"
 )
 
 # 循环执行

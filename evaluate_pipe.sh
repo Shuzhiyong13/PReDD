@@ -9,7 +9,7 @@ EXPS=("fruits_10ipc")
 DATASETS=("imagenet-fruits")
 
 DISTILL_DIFFUSIONS=(
-    "/root/PureDD/sample_results/dit-distillation/dm/imagenet-fruits/fruits_10ipc/imagenet_distill_256_256.pt"
+    "/root/PReDD/sample_results/dit-distillation/dm/imagenet-fruits/fruits_10ipc/imagenet_distill_256_256.pt"
 )
 
 # GPUS=(0 1 3 5 6) 
