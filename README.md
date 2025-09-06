@@ -1,4 +1,4 @@
-# **📖** PReDD: Post-Distillation Refinement for Dataset Distillation
+# PReDD: Post-Distillation Refinement for Dataset Distillation
 
 > Official implementation of the ICASSP 2026 paper:  
 
@@ -11,13 +11,13 @@
 </div>
 
 
-## **🔍** Abstract
+## Abstract
 
 Dataset distillation compresses large datasets into compact synthetic subsets for efficient learning. However, existing methods often rely on specific surrogate models, resulting in undesirable high-frequency patterns and limited cross-architecture generalization. To address this issue, we introduce **PReDD**, a training-free and **P**ost-distillation **Re**finement module that improves the quality of **D**istilled Datasets without retraining or modifying the original pipeline. PReDD encodes distilled images into the latent space of a pre-trained VAE and applies a truncated reverse diffusion process to refine them, effectively suppressing surrogate-induced high-frequency patterns while enhancing semantic content. Our method is model-agnostic and compatible with various distillation techniques. Extensive experiments show that PReDD consistently achieves state-of-the-art performance on cross-architecture evaluation, demonstrating superior generalization in dataset distillation.
 
 ## Implementation
 
-### **⚙️** Getting Started
+### Getting Started
 
 First, create the Conda virtual `environment`:
 
