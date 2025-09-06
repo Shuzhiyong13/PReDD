@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # 设置参数
-MODE="ours"   # NCFM, mtt, dm, ours, random
+MODE="ours"   # NCFM, mtt, dm, edf, ours, random
 SAVED="dm"  # 保存的路径！！！！！
-LOG_TYPE="semantic"  # "original" or "semantic"
+LOG_TYPE="semantic"  # "original" or "semantic" original 对应 各类方法, 我们的方法验证均对应 ours
 
 EXPS=("fruits_10ipc")
 DATASETS=("imagenet-fruits")

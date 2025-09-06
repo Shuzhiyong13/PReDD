@@ -1,24 +1,22 @@
-#!/bin/bash
-
-# 参数设置
-MODE="dm"  # 用于保存路径和 distill_type
-
-# GPU 设备
-GPU=0
-
-EXPS=( "fruits_10ipc")
+#!/bin/bash 
+# Parameter settings
+MODE="dm"  # Used for save path and distill_type
+EXPS=("fruits_10ipc")
 DATASETS=("imagenet-fruits")
 DISTILL_PATHS=(
     "/root/PReDD/saved_results/dm/imagenet-fruits/10_ipc/res_128_DM_imagenet-fruits_ConvNet_10ipc.pt"
 )
 
-# 循环执行
+# GPU device
+GPU=0
+
+# Loop through experiments
 for i in "${!EXPS[@]}"; do
     EXP=${EXPS[$i]}
     DATASET=${DATASETS[$i]}
     DISTILL_PATH=${DISTILL_PATHS[$i]}
 
-    # 构建保存目录（保持原逻辑）
+    # Create save directory
     SAVE_DIR="./sample_results/dit-distillation/${MODE}"
 
     echo "Launching distillation with:"
@@ -49,3 +47,12 @@ for i in "${!EXPS[@]}"; do
 
     echo "Experiment $EXP finished!"
 done
+
+# # 参数设置, 请不要忘记修改!
+# MODE="NCFM"  # 用于保存路径 和 distill_type
+# EXPS=( "cats_10ipc")
+# DATASETS=("imagenet-cats")
+# DISTILL_PATHS=(
+#     "/root/PReDD/saved_results/NCFM/images-meow10/data_20000.pt"
+# )
+# NCFM 相关超参数请参考 github README

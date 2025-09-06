@@ -122,9 +122,10 @@ def main(args):
 
     features = []
     # register forward hook
-    def hook_fn(module, input, output):
-        features.append(output)
-    handle = vae.encoder.down_blocks[args.hook_layer].register_forward_hook(hook_fn)
+    # if you need vae features to guide, feel free to use this--------- args.hook_layer = [0,1,2,3]
+    # def hook_fn(module, input, output):
+    #     features.append(output)
+    # handle = vae.encoder.down_blocks[args.hook_layer].register_forward_hook(hook_fn)
     
     criterion_mse = nn.MSELoss().to(args.device)
 
@@ -282,11 +283,11 @@ def main(args):
                 z = torch.cat([z, z], 0)
                 y_real = torch.tensor([class_indices[y_idx.item()]], device=device)
                 y_null = torch.tensor([1000], device=device)
-                y = torch.cat([y_real, y_null], 0)
-                sources = [vae, features, criterion_mse, args.repeat, 1]
-                model_kwargs = dict(y=y, cfg_scale=args.cfg_scale, sources=sources, gen_type="ours",
-                                    low=args.low, high=args.high, feat_scale=args.feat_scale,
-                                    feature_z0=feature_z0, syn_feature=syn_feature)
+                y_cat = torch.cat([y_real, y_null], 0)
+                model_kwargs = dict(
+                    y=y_cat,
+                    cfg_scale=args.cfg_scale,
+                )
 
                 if args.sample_method == 'ddim':
                     samples = diffusion.ddim_sample_loop(
@@ -341,7 +342,6 @@ def main(args):
     cur_mem = torch.cuda.max_memory_allocated(device) / 1024**2
     print(f"总过程峰值显存占用: {cur_mem:.2f} MB")
 
-    del handle
     if args.distill_type == 'NCFM':
         # 转换为 [10,3,512,512] 和 [10] 标签
         final_tensor = torch.stack(merged_samples)  # [10,3,512,512]

@@ -73,7 +73,7 @@ GPU=0
 EXPS=("fruits_10ipc")
 DATASETS=("imagenet-fruits")
 DISTILL_PATHS=(
-    "/root/PreDD/saved_results/dm/imagenet-fruits/10_ipc/res_128_DM_imagenet-fruits_ConvNet_10ipc.pt"
+    "/root/PReDD/saved_results/dm/imagenet-fruits/10_ipc/res_128_DM_imagenet-fruits_ConvNet_10ipc.pt"
 )
 
 # Loop through experiments
@@ -134,7 +134,7 @@ To evaluate a refined dataset using the **DM** method with 10 IPC, execute the s
 #!/bin/bash
 
 # Parameter settings
-MODE="dm"  # Choose from: ncfm, mtt, dm, ours, random
+MODE="dm"  # Choose from: ncfm, mtt, dm, edf, ours, random
 SAVED="dm"  # Saved path!!
 LOG_TYPE="semantic"  # Options: "original" or "semantic"
 
