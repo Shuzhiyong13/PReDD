@@ -19,16 +19,22 @@ Dataset distillation compresses large datasets into compact synthetic subsets fo
 
 ### **⚙️** Getting Started
 
-First, create the Conda virtual environment:
+First, create the Conda virtual `environment`:
 
 ```bash
-conda env create -f environment.yaml
+conda create -n predd python=3.10 -y
 ```
 
 Then, activate the Conda environment:
 
 ```bash
-source activate predd
+conda activate predd
+```
+
+Finally, install the dependencies from 'requirements.txt':
+
+```bash
+pip install -r requirements.txt
 ```
 
 Before starting, ensure that you have downloaded the DiT checkpoint:
