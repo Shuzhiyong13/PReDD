@@ -2,7 +2,7 @@
 
 > Official implementation of the ICASSP 2026 paper:  
 
-> Authors: Zhiyong Shu, Qianxin Xia, Zihan Cheng, Heng Yin, Guoming Lu, Jielei Wang.
+> Authors: Zhiyong Shu, Guoming Lu, Qianxin Xia, Zihan Cheng, Heng Yin, Jielei Wang.
 
 > [🌐 Project Page](https://predd13.github.io/)
 
