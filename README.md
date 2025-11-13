@@ -25,6 +25,13 @@ First, create the Conda virtual `environment`:
 conda env create -f environment.yaml --verbose
 ```
 
+if the above command is too slow, you can try this:
+```bash
+conda create -n predd python=3.10
+conda activate predd
+pip install -r requirements.txt
+```
+
 Then, activate the Conda environment:
 
 ```bash
