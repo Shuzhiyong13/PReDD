@@ -298,8 +298,9 @@ if __name__ == '__main__':
     parser.add_argument('--save_path', type=str, default='result', help='path to save results')
 
     parser.add_argument('--res', type=int, default=128, choices=[128, 256, 512], help='resolution')
-    
-
+    parser.add_argument('--width', type=int, default=128)
+    parser.add_argument('--depth', type=int, default=5) 
+    # usually for imagenet subsets, convs depth are set to 5, the same as evaluation, which is set in evaluate_pipe.sh
     parser.add_argument('--lr_img', type=float, default=1.0, help='learning rate for pixels or f_latents')
     args = parser.parse_args()
     main(args)
